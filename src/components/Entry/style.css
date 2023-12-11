@@ -1,0 +1,65 @@
+.main {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	padding: 26px 0px;
+}
+
+.rect {
+	display: flex;
+	justify-content: center;
+	width: 10px;
+	height: 10px;
+
+	position: relative;
+	left: -5px;
+
+	border: 3px solid var(--color-1);
+}
+
+.date {
+	margin: 20px 00px;
+	padding: 00px 10px;
+
+	width: 30%;
+	height: 36;
+	text-align: center;
+	/* font-size: 24px; */
+}
+
+.current {
+	border: 3px solid var(--color-1);
+}
+
+.divider1,
+.divider2,
+.divider3 {
+	height: 3px;
+	background-color: var(--color-1);
+}
+
+.divider1 {
+	width: 40px;
+}
+.divider2 {
+	display: flex;
+	flex-grow: 1;
+}
+
+.divider3 {
+	width: 40px;
+}
+
+
+.box{
+	padding: 0px 10px;
+}
+.box > path {
+	stroke: var(--color-1);
+	stroke-width: 3px !important;
+}
+
+.box > text{
+	fill: var(--color-1);
+}

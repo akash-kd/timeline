@@ -1,0 +1,73 @@
+:root {
+	--color-1: #082f49; /* 200 */
+	--color-2: #075985; /* 600 */
+	--color-3: #0284c7; /* 800 */
+	--color-4: #bae6fd; /* 950 */
+
+	/* --font-family: 'Rugen', sans-serif; */
+	--font-family: 'Proto Mono', sans-serif;
+	/* --font-family: 'Fredoka', sans-serif; */
+	/* --font-family: 'Capriola', sans-serif; */
+	/* --font-family: 'Manrope', sans-serif; */
+	/* --border-width: '4p; */
+
+	--font-size: 24px;
+
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	line-height: 1.5;
+	font-weight: 500;
+
+	color-scheme: light dark;
+	color: var(--color-1);
+	background-color: var(--color-4);
+
+	width: 100vw;
+	height: 100vh;
+
+	margin: 0;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	/* transition: 50ms ease-in-out; */
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+
+	scroll-behavior: smooth;
+
+	transition: 600ms cubic-bezier(0, 0, 0, 1);
+	/* text-transform: uppercase; */
+	/* scrollbar-track-color: var(--color-4); */
+	scrollbar-base-color: var(--color-4);
+	scrollbar-color: transparent transparent;
+}
+
+body,
+#root {
+	width: 100vw;
+	height: 100vh;
+
+	margin: 0;
+	padding: 0;
+
+	/* font-size: var(--font-family); */
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track::hover {
+	background: transparent;
+	color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	color: transparent;
+	background-color: transparent;
+}

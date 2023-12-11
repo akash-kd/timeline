@@ -1,0 +1,76 @@
+.intro-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.intro-content {
+	height: 70%;
+	width: 50%;
+
+	border: 3px solid var(--color-1);
+	padding: 50px 200px;
+}
+
+.content-title {
+	margin-bottom: 60px;
+}
+
+.para1 {
+	margin-top: 100px;
+}
+
+.content-nav {
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+	margin-top: 100px;
+}
+
+
+.intro-content > button {
+	height: 50px;
+	width: 130px;
+
+	border: 3px solid var(--color-1);
+}
+
+.intro-button:hover > path {
+	cursor: pointer;
+	fill: var(--color-1);
+}
+.intro-button:hover > text {
+	cursor: pointer;
+	fill: var(--color-4);
+}
+
+.intro-button > path {
+	stroke: var(--color-1);
+}
+.intro-button > text {
+	fill: var(--color-1);
+}
+
+/* ---- Features --------------- */
+
+.features {
+	width: 100%;
+	height: 50%;
+
+	display: flex;
+	gap: 30px;
+}
+
+.featureA {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding-top: 20px;
+
+	width: 100%;
+	height: 100%;
+
+
+	border: 3px solid var(--color-1);
+}
