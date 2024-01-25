@@ -3,6 +3,7 @@ import Button from '../../components/Button/button'
 import './styles.css'
 import { TypeAnimation } from 'react-type-animation'
 
+
 export function CharmInfinity(props) {
 	return (
 		<svg
@@ -123,6 +124,8 @@ function Nav({ slide, setSlides }) {
 				onClick={() => {
 					setSlides((prev) => prev + 1)
 					if (slide === 1) {
+						let data = {};
+						localStorage.setItem('data', JSON.stringify(data));
 						localStorage.setItem('intro', true)
 						location.reload()
 					}

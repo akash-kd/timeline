@@ -9,7 +9,7 @@ import {
 	replaceItemAtIndex,
 } from '../../utils/arrayUtils'
 import moment from 'moment'
-import Star from '../Icons/start'
+// import Star from '../Icons/star'
 
 export default function List({ date, onRemoveClick }) {
 	const [items, setItems] = useRecoilState(TimelineState)
@@ -67,9 +67,7 @@ export default function List({ date, onRemoveClick }) {
 	console.log('focus', focus)
 
 	return (
-		<div
-			className={styles.main}
-		>
+		<div className={styles.main}>
 			{items[date].map((item, index) => {
 				// console.log(index, item)
 				return (
@@ -110,10 +108,7 @@ export default function List({ date, onRemoveClick }) {
 							)} */}
 							</>
 						) : (
-							<div className={styles.item}>
-								<p className={styles.itemContent}>{item}</p>
-								<Star />
-							</div>
+							<p className={styles.itemContent}>{item}</p>
 						)}
 					</div>
 				)

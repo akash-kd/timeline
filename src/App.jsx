@@ -4,50 +4,27 @@ import Day from './components/Day/day'
 import moment from 'moment'
 import AnimateHeight from 'react-animate-height'
 import { useEffect, useState } from 'react'
-import Modal from 'react-modal'
 import PastWeek from './components/PastWeek/pastWeek'
+import { color1, color2, color3, color4 } from './consts/colors'
+import Highlights from './components/highlights/highlights'
+import { Dialog, Portal } from '@ark-ui/react'
 
 function App() {
 	// const [isCollapsed, setIsCollapsed] = useState(false)
 	const today = moment()
 	const [settings, setSettings] = useState(0)
-	const [colorIndex, setColorIndex] = useState(0) // get from local stograte
+	const [colorIndex, setColorIndex] = useState(
+		parseInt(localStorage.getItem('theme')) || 0,
+	) // get from local stograte
 
+	console.log(
+		'COLOR',
+		typeof localStorage.getItem('theme'),
+		parseInt(localStorage.getItem('theme')),
+	)
 	let dates = []
 
 	if (moment().format('dddd') === 'Monday') {
-		dates.push(moment().add(1, 'days'))
-		dates.push(moment().add(2, 'days'))
-		dates.push(moment().add(3, 'days'))
-		dates.push(moment().add(4, 'days'))
-		dates.push(moment().add(5, 'days'))
-	} else if (moment().format('dddd') === 'Tuesday') {
-		dates.push(moment().add(-1, 'days'))
-		dates.push(moment())
-		dates.push(moment().add(1, 'days'))
-		dates.push(moment().add(2, 'days'))
-		dates.push(moment().add(3, 'days'))
-	} else if (moment().format('dddd') === 'Wednesday') {
-		dates.push(moment().add(-2, 'days'))
-		dates.push(moment().add(-1, 'days'))
-		dates.push(moment())
-		dates.push(moment().add(1, 'days'))
-		dates.push(moment().add(2, 'days'))
-	} else if (moment().format('dddd') === 'Thursday') {
-		dates.push(moment().add(-3, 'days'))
-		dates.push(moment().add(-2, 'days'))
-		dates.push(moment().add(-1, 'days'))
-		dates.push(moment())
-		dates.push(moment().add(1, 'days'))
-	} else if (moment().format('dddd') === 'Friday') {
-		dates.push(moment().add(-4, 'days'))
-		dates.push(moment().add(-3, 'days'))
-		dates.push(moment().add(-2, 'days'))
-		dates.push(moment().add(-1, 'days'))
-		dates.push(moment())
-	}
-	// Onle for debuggin purpose, enable staturday, sundayq
-	else if (moment().format('dddd') === 'Saturday') {
 		dates.push(moment())
 		dates.push(moment().add(1, 'days'))
 		dates.push(moment().add(2, 'days'))
@@ -55,32 +32,72 @@ function App() {
 		dates.push(moment().add(4, 'days'))
 		dates.push(moment().add(5, 'days'))
 		dates.push(moment().add(6, 'days'))
-		dates.push(moment().add(7, 'days'))
-		dates.push(moment().add(8, 'days'))
+	} else if (moment().format('dddd') === 'Tuesday') {
+		dates.push(moment().add(-1, 'days'))
+		dates.push(moment())
+		dates.push(moment().add(1, 'days'))
+		dates.push(moment().add(2, 'days'))
+		dates.push(moment().add(3, 'days'))
+		dates.push(moment().add(4, 'days'))
+		dates.push(moment().add(5, 'days'))
+	} else if (moment().format('dddd') === 'Wednesday') {
+		dates.push(moment().add(-2, 'days'))
+		dates.push(moment().add(-1, 'days'))
+		dates.push(moment())
+		dates.push(moment().add(1, 'days'))
+		dates.push(moment().add(2, 'days'))
+		dates.push(moment().add(3, 'days'))
+		dates.push(moment().add(4, 'days'))
+	} else if (moment().format('dddd') === 'Thursday') {
+		dates.push(moment().add(-3, 'days'))
+		dates.push(moment().add(-2, 'days'))
+		dates.push(moment().add(-1, 'days'))
+		dates.push(moment())
+		dates.push(moment().add(1, 'days'))
+		dates.push(moment().add(2, 'days'))
+		dates.push(moment().add(3, 'days'))
+	} else if (moment().format('dddd') === 'Friday') {
+		dates.push(moment().add(-4, 'days'))
+		dates.push(moment().add(-3, 'days'))
+		dates.push(moment().add(-2, 'days'))
+		dates.push(moment().add(-1, 'days'))
+		dates.push(moment())
+		dates.push(moment().add(1, 'days'))
+		dates.push(moment().add(2, 'days'))
+	} else if (moment().format('dddd') === 'Saturday') {
+		dates.push(moment().add(-1, 'days'))
+		dates.push(moment().add(-2, 'days'))
+		dates.push(moment().add(-3, 'days'))
+		dates.push(moment().add(-4, 'days'))
+		dates.push(moment().add(-5, 'days'))
+		dates.push(moment())
+		dates.push(moment().add(1, 'days'))
+	} else if (moment().format('dddd') === 'Sunday') {
+		dates.push(moment().add(-1, 'days'))
+		dates.push(moment().add(-2, 'days'))
+		dates.push(moment().add(-3, 'days'))
+		dates.push(moment().add(-4, 'days'))
+		dates.push(moment().add(-5, 'days'))
+		dates.push(moment().add(-6, 'days'))
+		dates.push(moment())
 	}
 
-	useEffect(() => {
-		const themeData = JSON.parse(localStorage.getItem('themeData'))
-		console.log('theme', themeData)
-		if (themeData === null) {
-			let themeData = {}
-			themeData.color = {
-				'--color-1': '#c7d2fe',
-				'--color-2': '#4f46e5',
-				'--color-3': '#3730a3',
-				'--color-4': '#1e1b4b',
-			}
-			localStorage.setItem('themeData', JSON.stringify(themeData))
-		}
-	}, [])
+	// useEffect(() => {
+	// 	const themeData = JSON.parse(localStorage.getItem('themeData'))
+	// 	console.log('theme', themeData)
+	// 	if (themeData === null) {
+	// 		let themeData = {}
+	// 		themeData.color = {
+	// 			'--color-1': '#c7d2fe',
+	// 			'--color-2': '#4f46e5',
+	// 			'--color-3': '#3730a3',
+	// 			'--color-4': '#1e1b4b',
+	// 		}
+	// 		localStorage.setItem('themeData', JSON.stringify(themeData))
+	// 	}
+	// }, [])
 
 	const changeColor = () => {
-		let color1 = ['#c7d2fe', '#99f6e4', '#bae6fd', '#bae6fd', '#082f49']
-		let color2 = ['#4f46e5', '#0d9488', '#0284c7', '#0284c7', '#075985']
-		let color3 = ['#3730a3', '#115e59', '#075985', '#075985', '#0284c7']
-		let color4 = ['#1e1b4b', '#042f2e', '#082f49', '#082f49', '#bae6fd']
-		console.log(colorIndex)
-
 		document.documentElement.style.setProperty(
 			'--color-1',
 			color1[colorIndex],
@@ -99,8 +116,38 @@ function App() {
 		)
 
 		setColorIndex((index) => {
-			if (index == 4) return 0
-			return index + 1
+			localStorage.setItem('theme', index)
+			if (index == 4) {
+				return 0
+			} else {
+				return index + 1
+			}
+		})
+	}
+
+	useEffect(() => {
+		console.log('WQQ', colorIndex, color1[colorIndex])
+		document.documentElement.style.setProperty(
+			'--color-1',
+			color1[colorIndex],
+		)
+		document.documentElement.style.setProperty(
+			'--color-2',
+			color2[colorIndex],
+		)
+		document.documentElement.style.setProperty(
+			'--color-3',
+			color3[colorIndex],
+		)
+		document.documentElement.style.setProperty(
+			'--color-4',
+			color4[colorIndex],
+		)
+	}, [])
+
+	const onNotificationClick = () => {
+		Notification.requestPermission().then((result) => {
+			console.log('NOTIFICATION:', result)
 		})
 	}
 
@@ -135,7 +182,9 @@ function App() {
 			</Modal> */}
 			<main className='main-body'>
 				<nav>
-					<a style={{ animationDelay: `25ms` }}>Highlights</a>
+					<a href='#hl' style={{ animationDelay: `25ms` }}>
+						Highlights
+					</a>
 					<a href='#pastweek' style={{ animationDelay: `50ms` }}>
 						Past Week
 					</a>
@@ -155,6 +204,7 @@ function App() {
 					))}
 				</nav>
 				<section>
+					<Highlights />
 					<PastWeek />
 					{dates.map((item, index) => (
 						<Day
@@ -205,11 +255,13 @@ function App() {
 							<></>
 						)}
 					</article> */}
+
 					<Button
 						text='Settings'
 						onClick={() => setSettings(settings === 0 ? 'auto' : 0)}
 						style={{ animationDelay: '200ms' }}
 					/>
+
 					<AnimateHeight
 						duration={300}
 						height={settings} // see props documentation below
@@ -221,7 +273,8 @@ function App() {
 								style={{ animationDelay: '30ms' }}
 							/>
 							<Button
-								text='Font'
+								text='Notification'
+								onClick={onNotificationClick}
 								style={{ animationDelay: '60ms' }}
 							/>
 							<Button

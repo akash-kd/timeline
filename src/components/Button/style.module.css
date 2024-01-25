@@ -15,12 +15,15 @@
 
 	border: 3px solid var(--color-1);
 	border-top: 0;
-	border-right: 0;
+	border-right: 0px;
 	cursor: pointer;
 
-	transform: translateX(200%);
-	transition: 100ms cubic-bezier(0, 0, 0, 1);
-	animation: slideIn 2000ms cubic-bezier(0, 0, 0, 1) forwards;
+	position: relative;
+	left: -3px;
+	transform: scaleX(102%);
+	/* transform: translateX(200%);po */
+	/* transition: 100ms cubic-bezier(0, 0, 0, 1); */
+	/* animation: slideIn 2000ms cubic-bezier(0, 0, 0, 1) forwards; */
 }
 
 @keyframes slideIn {

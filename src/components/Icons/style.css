@@ -28,3 +28,9 @@
     stroke: var(--color-4);
 }
 
+
+
+.icon-plane > path {
+    stroke: var(--color-1);
+    stroke-width: 1.8px;
+}

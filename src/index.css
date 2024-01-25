@@ -1,3 +1,6 @@
+@layer reset, base, tokens, recipes, utilities;
+
+
 :root {
 	--color-1: #082f49; /* 200 */
 	--color-2: #075985; /* 600 */

@@ -153,24 +153,7 @@ section {
 	overflow-y: scroll;
 	font-size: 16px;
 }
-.main-body > aside > article {
-	/* padding: 0px 20px; */
-	border-bottom: 3px solid var(--color-1);
 
-	/* font-size: 20px; */
-}
-
-.aside-title {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	/* border-bottom: 3px solid var(--color-1); */
-	padding: 0px 20px;
-}
-
-.tab-space {
-	width: 40px;
-}
 .text-center {
 	text-align: center;
 }

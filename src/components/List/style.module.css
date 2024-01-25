@@ -10,6 +10,9 @@
 	align-items: center;
 	flex-grow: 1;
 }
+.inputContainer:last-of-type{
+	margin-bottom: 30px;
+}
 
 .input {
 	display: flex;
@@ -36,3 +39,10 @@
 	flex-grow: 1;
 	margin: 0;
 }
+
+.itemContent:last-of-type {
+	display: flex;
+	flex-grow: 1;
+	margin: 0;
+}
+

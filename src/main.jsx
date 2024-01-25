@@ -6,6 +6,7 @@ import './index.css'
 import { RecoilRoot } from 'recoil'
 
 var intro = localStorage.getItem('intro')
+
 if (intro === null) {
 	ReactDOM.createRoot(document.getElementById('root')).render(
 		<React.StrictMode>
