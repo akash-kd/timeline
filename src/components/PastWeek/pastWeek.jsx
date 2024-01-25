@@ -38,10 +38,8 @@ export default function PastWeek() {
 
 		for (let i = 7; i >= 1; i--) {
 			let delta = moment().subtract(x, 'days')
-			console.log('DATEDELTA', delta.format('DD-MMM-YYYY'))
 			dates.push(delta.add(-i, 'days').format('DD-MMM-YYYY'))
 		}
-		console.log('PW', data[dates[0]])
 		setValues(data[dates[0]] ? data[dates[0]] : [])
 		setDates(dates)
 	}, [])
@@ -54,17 +52,12 @@ export default function PastWeek() {
 	}, [getSelected])
 
 	const onHighLightClick = (item, dateindex) => {
-		console.log('ITEM', item, getDates[dateindex])
-		// if (data === null || data === undefined) {
-		// 	data = []
-		// }
 		let record = { action: item, date: getDates[dateindex] }
 		setHL((HL) => {
 			return [...HL, record]
 		})
 	}
 
-	console.log('Values', getValues)
 	return (
 		<div id='pastweek' className='pastweek'>
 			<Entry date='Pastweek' />

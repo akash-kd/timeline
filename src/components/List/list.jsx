@@ -17,9 +17,6 @@ export default function List({ date, onRemoveClick }) {
 		new Array(items[date] ? items[date]?.length : 0).fill(false),
 	)
 
-	// useEffect(() => {
-	// 	console.log('focus', focus)
-	// }, [focus])
 
 	if (items[date] === undefined || items[date]?.length === 0) {
 		return (
@@ -55,7 +52,6 @@ export default function List({ date, onRemoveClick }) {
 	}
 
 	const onRemove = (index) => {
-		console.log('minus clicked')
 		setItems((prev) => {
 			let newItems = { ...prev }
 			newItems[date] = removeItemAtIndex(items[date], index)
@@ -63,13 +59,9 @@ export default function List({ date, onRemoveClick }) {
 		})
 	}
 
-	console.log('Items', items)
-	console.log('focus', focus)
-
 	return (
 		<div className={styles.main}>
 			{items[date].map((item, index) => {
-				// console.log(index, item)
 				return (
 					<div className={styles.inputContainer} key={index}>
 						<p>-&nbsp;</p>

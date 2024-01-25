@@ -7,8 +7,6 @@ import { HighlightsState } from '../../state/highlights'
 export default function Highlights() {
 	const values = useRecoilValue(HighlightsState)
 
-	console.log('HL:', values)
-
 	return (
 		<div className={css({ scrollSnapAlign: 'start' })} id='hl'>
 			<Entry

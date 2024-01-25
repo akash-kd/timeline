@@ -8,12 +8,10 @@ import { useRecoilState } from 'recoil'
 export default function Day({ date, current = false }) {
 	const [items, setItems] = useRecoilState(TimelineState)
 	const onAddClick = () => {
-		console.log(`Added on ${date}`)
 		setItems((prev) => {
 			let newItems = { ...prev }
 			if (newItems[date] === undefined) newItems[date] = []
 			newItems[date] = [...newItems[date], '']
-			console.log(newItems)
 			return newItems
 		})
 	}

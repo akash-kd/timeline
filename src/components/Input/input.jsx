@@ -15,7 +15,6 @@ export default function Input({index, setItems, inputMode, defaultValue}) {
 		setCaretPosition(input.current.selectionEnd)
 	}
 
-	// console.log(input.current.selectionEnd)
 	return (
 		<div className='inputMain'>
 			<div className='inputContainer' onClick={onDivClick}>

@@ -33,6 +33,7 @@ export function CharmNorthStar(props) {
 				fill='none'
 				stroke='#888888'
 				stroke-width='1.8'
+				strokeLinecap="butt"
 				d='M13.75 7.75h-12m6-6v12m-3.5-2.5l7-7m0 7l-7-7'
 			></path>
 		</svg>

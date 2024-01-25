@@ -17,11 +17,6 @@ function App() {
 		parseInt(localStorage.getItem('theme')) || 0,
 	) // get from local stograte
 
-	console.log(
-		'COLOR',
-		typeof localStorage.getItem('theme'),
-		parseInt(localStorage.getItem('theme')),
-	)
 	let dates = []
 
 	if (moment().format('dddd') === 'Monday') {
@@ -84,7 +79,6 @@ function App() {
 
 	// useEffect(() => {
 	// 	const themeData = JSON.parse(localStorage.getItem('themeData'))
-	// 	console.log('theme', themeData)
 	// 	if (themeData === null) {
 	// 		let themeData = {}
 	// 		themeData.color = {
@@ -126,7 +120,6 @@ function App() {
 	}
 
 	useEffect(() => {
-		console.log('WQQ', colorIndex, color1[colorIndex])
 		document.documentElement.style.setProperty(
 			'--color-1',
 			color1[colorIndex],

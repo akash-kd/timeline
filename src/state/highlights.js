@@ -6,7 +6,6 @@ export const HighlightsState = atom({
 	effects: [
 		({ onSet }) => {
 			onSet((data) => {
-				console.log("Highlights:",data);
 				localStorage.setItem('highlights', JSON.stringify(data));
 			})
 		},
