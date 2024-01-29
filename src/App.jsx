@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import PastWeek from './components/PastWeek/pastWeek'
 import { color1, color2, color3, color4 } from './consts/colors'
 import Highlights from './components/highlights/highlights'
-import { Dialog, Portal } from '@ark-ui/react'
+import Chart from './components/Chart/chart'
 
 function App() {
 	// const [isCollapsed, setIsCollapsed] = useState(false)
@@ -111,6 +111,15 @@ function App() {
 
 		setColorIndex((index) => {
 			localStorage.setItem('theme', index)
+			localStorage.setItem(
+				'theme-data',
+				JSON.stringify({
+					color1: color1[index],
+					color2: color2[index],
+					color3: color3[index],
+					color4: color4[index],
+				}),
+			)
 			if (index == 4) {
 				return 0
 			} else {
@@ -135,6 +144,15 @@ function App() {
 		document.documentElement.style.setProperty(
 			'--color-4',
 			color4[colorIndex],
+		)
+		localStorage.setItem(
+			'theme-data',
+			JSON.stringify({
+				color1: color1[colorIndex],
+				color2: color2[colorIndex],
+				color3: color3[colorIndex],
+				color4: color4[colorIndex],
+			}),
 		)
 	}, [])
 
@@ -248,6 +266,8 @@ function App() {
 							<></>
 						)}
 					</article> */}
+
+					<Chart />
 
 					<Button
 						text='Settings'
