@@ -38,6 +38,9 @@ export default function Chart() {
 	let start = moment(day1, 'DD-MMM-YYYY')
 	let end = moment()
 	let diff = end.diff(start, 'days')
+
+	console.log("START DATE:", start.format("DD-MMM"))
+	console.log("END DATE:", end.format("DD-MMM"))
 	let score = 1
 	let data = []
 	let min = 1000,
@@ -68,6 +71,8 @@ export default function Chart() {
 			data: data,
 		},
 	]
+	if (min === 1000 && max === -1000) return <></>
+	
 	return (
 		<div
 			className={css({
@@ -84,7 +89,7 @@ export default function Chart() {
 				data={chartData}
 				theme={theme}
 				pixelRatio={1}
-				colors={[themeData.color1]}
+				colors={[themeData?.color1 || "#082f49"]}
 				margin={{ top: 50, left: 50, right: 50, bottom: 50 }}
 				curve='catmullRom'
 				yScale={{

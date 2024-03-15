@@ -7,6 +7,8 @@ import { RecoilRoot } from 'recoil'
 
 var intro = localStorage.getItem('intro')
 
+document.documentElement.style.setProperty('--color-1', '#082f49')
+
 if (intro === null) {
 	ReactDOM.createRoot(document.getElementById('root')).render(
 		<React.StrictMode>

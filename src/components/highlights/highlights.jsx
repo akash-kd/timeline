@@ -19,7 +19,7 @@ export default function Highlights() {
 							alignItems: 'center',
 						})}
 					>
-						<CharmNorthStar /> highlights
+						<CharmNorthStar /> <p>highlights</p>
 					</div>
 				}
 			/>
