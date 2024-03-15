@@ -1,5 +1,8 @@
 @layer reset, base, tokens, recipes, utilities;
-
+@font-face {
+	font-family: ST Mono;
+	src: url(./fonts/font.woff);
+}
 
 :root {
 	--color-1: #082f49; /* 200 */
@@ -8,7 +11,7 @@
 	--color-4: #bae6fd; /* 950 */
 
 	/* --font-family: 'Rugen', sans-serif; */
-	--font-family: 'Proto Mono', sans-serif;
+	--font-family: 'ST Mono', sans-serif;
 	/* --font-family: 'Fredoka', sans-serif; */
 	/* --font-family: 'Capriola', sans-serif; */
 	/* --font-family: 'Manrope', sans-serif; */
@@ -62,6 +65,8 @@ body,
 	margin: 0;
 	padding: 0;
 
+
+	overflow: hidden;
 	/* font-size: var(--font-family); */
 }
 
