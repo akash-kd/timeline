@@ -47,7 +47,7 @@
 
 	flex-wrap: wrap;
 	text-wrap: wrap;
-	word-break: break-all;
+	word-break: keep-all;
 }
 
 .pw-main-div:first-of-type{
@@ -64,9 +64,9 @@
 	margin: 0px;
 	margin-left: 60px !important;
 
-	justify-content: center;
+
 	align-items: center;
-	text-align: center;
+
 }
 
 .pw-main-div-no-action > p{
