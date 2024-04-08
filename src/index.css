@@ -1,7 +1,7 @@
 @layer reset, base, tokens, recipes, utilities;
 @font-face {
 	font-family: ST Mono;
-	src: url(./fonts/font.woff);
+	src: url("../assets/font.woff") format("woff");
 }
 
 :root {

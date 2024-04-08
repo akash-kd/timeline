@@ -260,7 +260,7 @@ function App() {
               height: "60px",
               justifyContent: "center",
 			  alignItems: "center",
-			//   border: '1px solid red',
+			//   border: '1px solid red',˘
 			  gap: "36px"
             })}
           >
